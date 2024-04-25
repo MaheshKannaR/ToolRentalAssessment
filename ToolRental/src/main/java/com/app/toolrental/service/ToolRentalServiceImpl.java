@@ -153,7 +153,7 @@ public class ToolRentalServiceImpl implements ToolRentalService {
     
     @Override
     // Checks out the tool and prints the rental agreement.
-    public boolean checkoutTool(String toolCode, int rentalDays, int discountPercentage, LocalDate checkoutDate) {
+    public RentalAgreement checkoutTool(String toolCode, int rentalDays, int discountPercentage, LocalDate checkoutDate) {
     		
     	if(validateInputs(rentalDays, discountPercentage)) {
     		Tool tool = getToolByCode(toolCode);
@@ -168,15 +168,15 @@ public class ToolRentalServiceImpl implements ToolRentalService {
     					rentalDays, discountPercentage, checkoutDate, dueDate, tool.getDailyCharge(), noOfChargeDays,
     					preDiscountCharge, discountAmount, finalCharge);
     			rentalAgreement.printAgreement();
-    			return true;
+    			return rentalAgreement;
     			
     		} else {
     			System.out.println("Tool not found for the given code");
-    			return false;
+    			return null;
     		}
     		
     	} 
-    	return false;
+    	return null;
     }
 
 }

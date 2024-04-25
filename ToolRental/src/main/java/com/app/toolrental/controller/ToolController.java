@@ -1,7 +1,5 @@
 package com.app.toolrental.controller;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.toolrental.models.RentalAgreement;
 import com.app.toolrental.models.Tool;
 import com.app.toolrental.requestbody.CheckOutToolRequestBody;
 import com.app.toolrental.service.ToolRentalService;
@@ -71,9 +70,9 @@ public class ToolController {
 
 	// API to checkout the tool and get the rental agreement details
 	@PostMapping({ "/checkoutTool" })
-	public ResponseEntity<Boolean> checkoutTool(@RequestBody final CheckOutToolRequestBody checkOutToolRequestBody) {
-		Boolean status = toolRentalService.checkoutTool(checkOutToolRequestBody.getToolCode(), checkOutToolRequestBody.getRentalDays(), checkOutToolRequestBody.getDiscountPercentage(), checkOutToolRequestBody.getCheckoutDate());
-		return new ResponseEntity<>(status, HttpStatus.OK);
+	public ResponseEntity<RentalAgreement> checkoutTool(@RequestBody final CheckOutToolRequestBody checkOutToolRequestBody) {
+		RentalAgreement rentalAgreement = toolRentalService.checkoutTool(checkOutToolRequestBody.getToolCode(), checkOutToolRequestBody.getRentalDays(), checkOutToolRequestBody.getDiscountPercentage(), checkOutToolRequestBody.getCheckoutDate());
+		return new ResponseEntity<RentalAgreement>(rentalAgreement, HttpStatus.OK);
 	}
 
 }

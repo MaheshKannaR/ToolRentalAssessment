@@ -32,7 +32,7 @@ public class RentalAgreement {
         // Decimal formatter for currency
         DecimalFormat df = new DecimalFormat("$#,##0.00");
         // Date formatter for formatting dates
-        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yy");
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         // Print the rental agreement details
         System.out.println("Tool code: " + toolCode);

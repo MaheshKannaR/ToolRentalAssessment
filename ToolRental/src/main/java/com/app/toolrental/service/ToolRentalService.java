@@ -3,6 +3,7 @@ package com.app.toolrental.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.app.toolrental.models.RentalAgreement;
 import com.app.toolrental.models.Tool;
 
 public interface ToolRentalService {
@@ -19,6 +20,6 @@ public interface ToolRentalService {
 
     void deleteTool(Long toolId);
 
-	boolean checkoutTool(String toolCode, int rentalDays, int discountPercentage, LocalDate checkoutDate);
+    RentalAgreement checkoutTool(String toolCode, int rentalDays, int discountPercentage, LocalDate checkoutDate);
 
 }
