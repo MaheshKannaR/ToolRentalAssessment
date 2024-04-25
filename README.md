@@ -70,6 +70,12 @@ Once the project is set up, you can use the following POST API to checkout the t
     "finalCharge": 1.495
 }
 ```
+## Testing
+Unit tests are provided to ensure the functionality of the ToolRentalService. You can run the tests using Maven
+```bash
+   mvn test
+```
+
 
 
 
