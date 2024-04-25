@@ -17,22 +17,22 @@ This project is a Tool Rental System developed using Spring Boot for assessment.
 
 1. Clone the repository:
 
- ```bash
+    ```bash
     git clone <repository_url>
-```
+    ```
 2. Navigate to the project directory:
 
    ```bash
- cd ToolRental
-```
+    cd ToolRental
+    ```
 3. Build the project:
-```bash
-./mvnw clean install
-```
+    ```bash
+    /mvnw clean install
+    ```
 4. Run the application:
-```bash
-java -jar target/ToolRental.jar
-```
+    ```bash
+    java -jar target/ToolRental.jar
+    ```
 
 ## Usage
 
